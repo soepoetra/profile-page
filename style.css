@@ -43,7 +43,7 @@ h1 {
     background-color: #000000;
 }
 .all-title {
-    background-image: url("images/page1.png");
+    background-image: url("images/page1.webp");
     /* aspect-ratio: 16 / 9; */
     height: 100vh;
     background-size: cover;
@@ -873,6 +873,7 @@ dialog::backdrop{
     object-fit: cover; */
 
 }
+
 
 
 
