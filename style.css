@@ -13,10 +13,81 @@
     }
 }
 
+/* ==================== SCROLL REVEAL ANIMATION ==================== */
+@keyframes scrollRevealUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.scroll-reveal.revealed {
+    animation: scrollRevealUp 0.8s ease-out forwards;
+}
+
 body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: #F1E3CA;
+    text-decoration: none;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #FF8B0F;
+    border-bottom-color: #FF8B0F;
+}
+
+.nav-link.active {
+    color: #FF8B0F;
+    border-bottom-color: #FF8B0F;
+}
+
+.bf-all-title {
+    margin-top: 0;
+}
+
 h1 {
     margin:0;
     font-size: clamp(40px, 7vw,80px);
@@ -142,8 +213,8 @@ h1 {
     font-size: clamp(3.5em, 5vw, 8em);
     padding-top: clamp(0.2em, 2vw, 0.4em);
     color: #673502;
-    animation: slideUp1 0.5s;
-    animation-timeline: view();
+    /* animation: slideUp1 0.5s; */
+    /* animation-timeline: view(); */
     /* animation-range: entry 20% cover 40%; */
     padding-top: 10vh
 }
@@ -167,8 +238,8 @@ h1 {
     padding-left: 7vw;
     padding-right: 4.5vw;
     margin-bottom: 0;
-    animation: slideUp1 0.5s;
-    animation-timeline: view();
+    /* animation: slideUp1 0.5s; */
+    /* animation-timeline: view(); */
     
     
     /* font-size: clamp(3em, 5vw, 8em); */
@@ -179,8 +250,8 @@ h1 {
     padding-right: 7vw;
     padding-left: 4.5vw;
     margin-bottom: 0;
-    animation: slideUp1 0.5s;
-    animation-timeline: view();
+    /* animation: slideUp1 0.5s; */
+    /* animation-timeline: view(); */
 
 }
 
@@ -198,8 +269,8 @@ h1 {
     text-align: center;
     padding-left: clamp(20%, 30vw, 30%);
     padding-right: clamp(20%, 30vw, 30%);
-    animation: slideUp2 0.5s;
-    animation-timeline: view();
+    /* animation: slideUp2 0.5s; */
+    /* animation-timeline: view(); */
 }
 
 .foto-page2{
@@ -359,11 +430,11 @@ h1 {
     }
 
     .organization{
-        animation: slideUp4;
+        /* animation: slideUp4; */
     }
 
     .text{
-        animation: slideUp4;
+        /* animation: slideUp4; */
 
     }
 }
@@ -407,8 +478,8 @@ h1 {
     font-size: clamp(3em, 5vw, 8em);
     padding-top: clamp(0.2em, 2vw, 0.4em);
     color: #FF8B0F;
-    animation: slideUp1 0.5s;
-    animation-timeline: view();
+    /* animation: slideUp1 0.5s; */
+    /* animation-timeline: view(); */
     padding-top: 5vh;
 
 }
@@ -591,8 +662,8 @@ dialog::backdrop{
     font-size: clamp(3em, 5vw, 8em);
     /* padding-top: clamp(0.2em, 2vw, 0.4em); */
     color: #673502;
-    animation: slideUp1 0.5s;
-    animation-timeline: view();
+    /* animation: slideUp1 0.5s; */
+    /* animation-timeline: view(); */
     padding-top: 5vh;
 
 }
@@ -669,8 +740,8 @@ dialog::backdrop{
     max-width: 500px;
     color: #4B2703;
     transition: 0.35s ease-in-out;
-    animation: slideUp3 0.5s;
-    animation-timeline: view();
+    /* animation: slideUp3 0.5s; */
+    /* animation-timeline: view(); */
     /* padding-top: 5vh; */
 }
 
@@ -874,6 +945,38 @@ dialog::backdrop{
 
 }
 
+
+/* ==================== NAVBAR RESPONSIVE ==================== */
+@media (max-width: 778px) {
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .nav-list {
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: clamp(12px, 1.5vw, 14px);
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .nav-list {
+        gap: 0.25rem;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.5rem;
+        font-size: 12px;
+    }
+}
 
 
 
